@@ -1,1 +1,2 @@
-<p>details-page works!</p>
+<p *ngIf="selectedBook">{{ selectedBook.title }}</p>
+<button (click)="onFavoriteClick()">{{ isFavorite ? 'Unlike' : 'Like' }}</button>

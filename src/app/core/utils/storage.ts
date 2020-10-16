@@ -38,7 +38,7 @@ export class Storage {
     const entities = Storage.getArray<T>(group);
 
     // @ts-ignore
-    if (!entities.some(e => e.id === id)) {
+    if (!entities.some(e => e.id === entity.id)) {
       entities.push(entity);
 
       localStorage.setItem(group, JSON.stringify(entities));

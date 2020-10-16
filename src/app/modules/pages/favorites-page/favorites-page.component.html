@@ -1,1 +1,8 @@
-<p>favorites-page works!</p>
+<div class="application">
+  <div *ngFor="let book of favoriteBooks" class="book">
+    <p>{{ book.title }}</p>
+    <button (click)="onDetailsClick(book)">Go To Details</button>
+    <button (click)="onFavoriteClick(book)">Unlike</button>
+  </div>
+</div>
+

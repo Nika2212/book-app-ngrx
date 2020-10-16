@@ -4,7 +4,9 @@ import { FavoritesPageComponent } from './favorites-page.component';
 import { FavoritesPageRoutingModule } from './favorites-page-routing.module';
 
 @NgModule({
-  declarations: [FavoritesPageComponent],
+  declarations: [
+    FavoritesPageComponent
+  ],
   imports: [
     CommonModule,
     FavoritesPageRoutingModule

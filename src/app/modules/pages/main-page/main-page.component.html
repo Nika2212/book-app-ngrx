@@ -1,1 +1,7 @@
-<p>main-page works!</p>
+<div class="application">
+  <div *ngFor="let book of storedBooks" class="book">
+    <p>{{ book.title }}</p>
+    <button (click)="onDetailsClick(book)">Go To Details</button>
+    <button (click)="onFavoriteClick(book)">{{ isFavorite(book.id) ? 'Unlike' : 'Like' }}</button>
+  </div>
+</div>
