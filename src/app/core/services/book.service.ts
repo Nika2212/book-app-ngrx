@@ -10,11 +10,11 @@ export class BookService {
 
   public getBooks(): Promise<void> {
     return new Promise<void>(resolve => {
-      const URL: string = ``;
+      const URL: string = `${}`;
 
+      // TODO : - Map And Store Data;
       // TODO : - Get Favorite Books;
       // TODO : - Get Selected Book;
-      // TODO : - Map And Store Data;
 
       this.http.get<unknown>(URL)
         .subscribe(payload => {
