@@ -32,7 +32,11 @@ export class BookService {
 
           resolve();
 
-          sub.unsubscribe();
+          try {
+            sub.unsubscribe();
+          } catch (e) {
+            throw new Error(e);
+          }
         });
     });
   }
