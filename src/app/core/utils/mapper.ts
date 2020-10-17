@@ -7,7 +7,7 @@ export function mapBook(bookItem: BookItem): Book {
   newBook.id = bookItem.id;
   newBook.title = bookItem.volumeInfo.title;
   newBook.authors = bookItem.volumeInfo.authors;
-  newBook.averageRating = bookItem.volumeInfo.averageRating;
+  newBook.averageRating = bookItem.volumeInfo.averageRating || 4.1;
   newBook.buyLink = bookItem.saleInfo.buyLink;
   newBook.categories = bookItem.volumeInfo.categories;
   newBook.description = bookItem.volumeInfo.description;

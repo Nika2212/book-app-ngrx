@@ -1,0 +1,72 @@
+@import '/src/assets/styles/mixins';
+
+.header-component {
+  @include flex();
+
+  padding-left: 15px;
+  padding-right: 15px;
+
+  background-color: #3f51b5;
+
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+
+  .brand {
+    button {
+      color: #fafafa;
+    }
+  }
+
+  .pages {
+    @include flex();
+
+    position: relative;
+
+    padding-left: 7px;
+    margin-left: 15px;
+
+    .page {
+      position: relative;
+
+      padding-left: 8px;
+      padding-right: 8px;
+
+      button {
+        color: #fafafa;
+      }
+
+      &.active {
+        &::after {
+          position: absolute;
+
+          left: 50%;
+          bottom: -4px;
+
+          width: 15px;
+          height: 3px;
+
+          transform: translateX(-50%);
+
+          border-radius: 1px;
+
+          background-color: #fafafa;
+
+          content: '';
+        }
+      }
+    }
+
+    &::after {
+      position: absolute;
+
+      left: 0;
+      top: 1px;
+
+      width: 1px;
+      height: 32px;
+
+      background-color: #bad3ff;
+
+      content: '';
+    }
+  }
+}

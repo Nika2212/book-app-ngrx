@@ -1,2 +1,48 @@
-<p *ngIf="selectedBook">{{ selectedBook.title }}</p>
-<button (click)="onFavoriteClick()">{{ isFavorite ? 'Unlike' : 'Like' }}</button>
+<div class="component details-page">
+  <div [ngStyle]="{'background-image': 'url(' + selectedBook.fullThumbnail + ')'}" class="thumbnail-block">
+    <div class="thumbnail">
+      <img [src]="selectedBook.fullThumbnail" alt="">
+    </div>
+
+    <div class="favorite-btn">
+      <button (click)="onFavoriteClick()" [color]="isFavorite ? 'warn' : 'primary'" mat-mini-fab>
+        <mat-icon>favorite</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="information">
+    <div class="row">
+      <label>Title</label>
+      <label [title]="selectedBook.title">{{ selectedBook.title | textRestriction: 45 }}</label>
+    </div>
+    <div class="row">
+      <label>Categories</label>
+      <label>{{ selectedBook.categories }}</label>
+    </div>
+    <div class="row">
+      <label>Authors</label>
+      <label>{{ selectedBook.authors }}</label>
+    </div>
+    <div class="row">
+      <label>Publish Date</label>
+      <label>{{ selectedBook.publishedDate }}</label>
+    </div>
+    <div class="row">
+      <label>Language</label>
+      <label>{{ selectedBook.language }}</label>
+    </div>
+    <div class="row">
+      <label>Rating</label>
+      <label>{{ selectedBook.averageRating || 'N/A' }}</label>
+    </div>
+    <div class="row">
+      <label>Instant Link</label>
+      <label>{{ selectedBook.buyLink || 'N/A' }}</label>
+    </div>
+    <div class="row">
+      <label>Description</label>
+      <p>{{ selectedBook.description }}</p>
+    </div>
+  </div>
+</div>

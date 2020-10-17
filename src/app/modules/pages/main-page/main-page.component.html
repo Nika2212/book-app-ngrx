@@ -1,7 +1,31 @@
-<div class="application">
-  <div *ngFor="let book of storedBooks" class="book">
-    <p>{{ book.title }}</p>
-    <button (click)="onDetailsClick(book)">Go To Details</button>
-    <button (click)="onFavoriteClick(book)">{{ isFavorite(book.id) ? 'Unlike' : 'Like' }}</button>
-  </div>
+<div class="component main-page">
+  <ul class="grid">
+    <li class="grid-item book" *ngFor="let book of storedBooks">
+      <div class="book-shape">
+        <div class="thumbnail">
+          <img [src]="book.previewThumbnail" alt="">
+        </div>
+        <div class="information">
+          <div class="description">
+            <p>{{ book.description | textRestriction: 100 }}</p>
+          </div>
+          <div class="rating"><small>{{ book.averageRating }}</small></div>
+          <div class="action"></div>
+        </div>
+        <div class="actions">
+          <button (click)="onDetailsClick(book)" color="primary" mat-mini-fab>
+            <mat-icon>read_more</mat-icon>
+          </button>
+
+          <button (click)="onFavoriteClick(book)" [color]="isFavorite(book.id) ? 'warn' : 'primary'" mat-mini-fab>
+            <mat-icon>favorite</mat-icon>
+          </button>
+        </div>
+      </div>
+
+      <div class="book-title">
+        <p>{{ book.title | textRestriction: 36 }}</p>
+      </div>
+    </li>
+  </ul>
 </div>
