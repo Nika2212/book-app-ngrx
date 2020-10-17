@@ -11,38 +11,38 @@
     </div>
   </div>
 
-  <div class="information">
-    <div class="row">
+  <ul class="information">
+    <li class="row">
       <label>Title</label>
       <label [title]="selectedBook.title">{{ selectedBook.title | textRestriction: 45 }}</label>
-    </div>
-    <div class="row">
+    </li>
+    <li class="row">
       <label>Categories</label>
       <label>{{ selectedBook.categories }}</label>
-    </div>
-    <div class="row">
+    </li>
+    <li class="row">
       <label>Authors</label>
       <label>{{ selectedBook.authors }}</label>
-    </div>
-    <div class="row">
+    </li>
+    <li class="row">
       <label>Publish Date</label>
       <label>{{ selectedBook.publishedDate }}</label>
-    </div>
-    <div class="row">
+    </li>
+    <li class="row">
       <label>Language</label>
       <label>{{ selectedBook.language }}</label>
-    </div>
-    <div class="row">
+    </li>
+    <li class="row">
       <label>Rating</label>
       <label>{{ selectedBook.averageRating || 'N/A' }}</label>
-    </div>
-    <div class="row">
+    </li>
+    <li class="row">
       <label>Instant Link</label>
       <label>{{ selectedBook.buyLink || 'N/A' }}</label>
-    </div>
-    <div class="row">
+    </li>
+    <li class="row">
       <label>Description</label>
       <p>{{ selectedBook.description }}</p>
-    </div>
-  </div>
+    </li>
+  </ul>
 </div>
