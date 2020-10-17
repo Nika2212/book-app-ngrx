@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../../app.state';
 import { Book } from '../../../shared/models/book.model';
-import { RemoveFavoriteAction } from '../../../store/actions/book.action';
+import { ClearFavoritesAction, RemoveFavoriteAction } from '../../../store/actions/book.action';
 import { Storage } from '../../../core/utils/storage';
 import { StorageGroups } from '../../../core/enums/storage-groups';
 import { BaseComponent } from '../../../core/base/base.component';
@@ -44,6 +44,10 @@ export class FavoritesPageComponent extends BaseComponent implements OnInit, OnD
     this.addSubscription(sub1);
   }
 
+  private deleteFavoriteBooks(): void {
+    this.store.dispatch(new ClearFavoritesAction());
+  }
+
   public ngOnInit(): void {
     this.getFavoriteBooks();
   }
@@ -58,5 +62,9 @@ export class FavoritesPageComponent extends BaseComponent implements OnInit, OnD
 
   public onFavoriteClick(book: Book): void {
     this.removeFromFavorites(book);
+  }
+
+  public onTrashClick(): void {
+    this.deleteFavoriteBooks();
   }
 }

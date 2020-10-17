@@ -1,5 +1,5 @@
 <div class="component favorites-page">
-  <ul class="grid">
+  <ul class="grid favorite-books-grid">
     <li class="grid-item book" *ngFor="let book of favoriteBooks">
       <div class="book-shape">
         <div class="thumbnail">
@@ -28,5 +28,15 @@
       </div>
     </li>
   </ul>
+
+  <div class="not-available-overlay">
+    <h1>You Have No Favorite Books</h1>
+  </div>
+
+  <div class="trash-btn">
+    <button (click)="onTrashClick()" mat-fab color="warn">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
 </div>
 
